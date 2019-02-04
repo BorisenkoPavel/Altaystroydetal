@@ -1,0 +1,1200 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+header
+	position: relative
+	padding-bottom: 10px
+
+.menu-list.header
+	background-color: #e8e8e8
+	position: absolute
+	right: 0
+	left: 0
+	z-index: 100
+	top: 140px
+	display: none
+	padding: 0
+	.menu-list__nav
+		margin: 20px 10px
+		li 
+			list-style-type: none
+		a
+			color: #000
+
+.search-block
+	background-color: #dedede
+	padding: 5px
+	position: absolute
+	right: 0
+	left: 0
+	z-index: 100
+	top: 140px
+	display: none
+	&__container
+		display: flex
+		align-items: center
+		input
+			display: inline-block
+			border: none
+			flex-grow: 1
+			margin-right: 5px
+			height: 40px
+			font-style: italic
+			padding-left: 15px
+	&__search-icon
+		width: 30px
+		height: 30px
+		background-image: url(../img/search.png)
+		background-repeat: no-repeat
+		display: inline-block
+
+.header-buttons__item.active
+	background-color: #0186d8
+	color: #fff
+
+.header-buttons
+	text-align: center
+	color: $accent
+	cursor: pointer
+	&__item
+		border: 1px solid #e8e8e8
+		border-bottom:  none
+		padding: 0 15px
+		&:last-child
+			border-bottom: 1px solid #e8e8e8
+
+.phone-block
+	position: relative
+	font-size: 16px 
+	font-family: arial
+	color: $accent
+	text-align: center
+	width: 185px
+	margin: 0 5px 0 20px
+	margin-top: 40px
+	&__time 
+		font-size: 12px
+		color: $text
+	&:after
+		content: ''
+		position: absolute
+		width: 185px
+		height: 49px
+		background-image: url(../img/logo-text.png)
+		background-repeat: no-repeat
+		left: 0
+		top: -35px
+
+	&:before
+		content: ''
+		position: absolute
+		width: 37px
+		height: 87px
+		background-image: url(../img/logo-icon.jpg)
+		background-repeat: no-repeat
+		bottom: 0
+		left: -40px
+
+.gase
+	background-color: #e6e6e6
+	padding: 10px
+.category-gase
+	list-style: none
+	padding: 0
+	margin: 0
+	&__item 
+		width: 100%	
+		height: 60px
+		background-color: #fff
+		margin-bottom: 10px
+		display: flex
+		&:last-child 
+			margin-bottom: 0
+		&:nth-child(2) .category-gase__text:before
+			background-position: -65px -65px
+		&:nth-child(3) .category-gase__text:before
+			background-position: -65px -132px
+		&:nth-child(4) .category-gase__text:before
+			background-position: -65px -200px
+		&:nth-child(5) .category-gase__text:before
+			background-position: -63px -271px
+		&:hover
+			.category-gase__text:before
+				background-position: -3px 10px
+			&:nth-child(2) .category-gase__text:before
+				background-position: -3px -65px
+			&:nth-child(3) .category-gase__text:before
+				background-position: -3px -132px
+			&:nth-child(4) .category-gase__text:before
+				background-position: -3px -200px
+			&:nth-child(5) .category-gase__text:before
+				background-position: -1px -271px
+	&__text
+		align-self: center
+		text-transform: uppercase
+		position: relative
+		height: 100%
+		margin-left: 75px
+		display: flex
+		align-items: center
+		width: 100%
+		color: $text
+		&:hover
+			text-decoration: none
+			color: $blue
+		&:before 
+			content: ''
+			position: absolute
+			background-image: url(../img/sprite-gase.png)
+			background-repeat: no-repeat
+			height: 100%
+			width: 55px
+			background-position: -65px 10px
+			left: -60px
+.info
+	padding: 10px
+
+.info-block
+	&__item
+		margin-bottom: 5px
+		cursor: pointer
+		&:hover .info-block__button
+			background-color: $accent
+			color: #fff
+	.info-block__button.active
+			background-color: $accent
+	&__button
+		width: 100%
+		line-height: 40px
+		background-color: #dedede
+		text-align: center
+		transition: .3s ease
+		text-transform: uppercase
+		font-size: 16px
+	&__text
+		list-style: none
+		display: none
+		li 
+			margin-bottom: 15px
+			position: relative
+			&:before
+				content: '\2014'
+				position: absolute
+				left: -20px
+				color: $blue
+				font-weight: bold
+
+
+h2 
+	text-transform: uppercase
+	font-size: 20px
+	text-align: center
+	margin: 20px 0
+	
+.products
+	padding: 0 10px
+
+.slider
+	position: relative
+	&__item
+		width: 300px
+		margin: auto
+		display: block
+	&__img 
+			width: 100%
+	&__nav-next,
+	&__nav-prev
+		position: absolute
+		height: 50px
+		width: 20px
+		color: $accent
+		top: 0
+		bottom: 0
+		margin: auto
+		background-color: #dedede
+		line-height: 50px
+		text-align: center
+		height: 50px
+	&__nav-prev
+		left: -10px
+	&__nav-next
+		right: -10px
+	&__price-container
+	&__price
+		font-size: 24px
+		font-weight: bold
+		background-color: #dedede
+		position: relative
+		padding-left: 10px
+		span 
+			font-size: 16px	
+			font-weight: normal
+	&__cart
+		background: $accent
+		position: absolute
+		top: 0
+		right: 0
+		width: 40px
+		text-align: center
+		color: #fff
+	&__category
+		font-size: 16px 
+		font-style: italic
+		color: #737373
+		padding-top: 5px
+		a 
+			color: #737373
+			text-decoration: underline
+	&__text 
+		padding-top: 5px
+
+.catalog
+	margin-top: 50px
+
+.catalog-button 
+	width: 100%
+	line-height: 40px
+	background-color: #0087dc
+	text-align: center
+	transition: .3s ease
+	text-transform: uppercase
+	font-size: 16px
+	color: #fff
+	margin-bottom: 5px
+	display: block
+	&:hover
+		color: #fff
+		text-decoration: none
+
+.call-back 
+	background-color: #0087dc
+	padding: 15px 10px
+	margin-top: 20px
+
+.call-back__title
+	font-size: 20px
+	color: #fff
+	margin-bottom: 20px
+	font-weight: 400
+
+.call-back__form
+	input
+		width: 100%
+		display: block
+		border: none
+		padding-left: 20px
+		color: #232323
+		margin-bottom: 10px
+	button
+		width: 220px
+		height: 50px
+		background-color: #232323
+		border: none
+		display: block
+		margin: auto
+		margin-top: 20px
+		color: #fff
+		font-size: 20px
+		text-transform: uppercase
+		cursor: pointer
+
+footer 
+	background-color: #1e1e1e
+.menu-list
+	list-style: none
+	padding: 20px 10px
+	.menu-list__nav
+		li 
+			margin-bottom: 15px
+			position: relative
+			list-style-type: none
+			a 
+				color: #fff
+			&:before
+				content: '\2014'
+				position: absolute
+				left: -20px
+				color: $blue
+				font-weight: bold
+
+.footer-catalog
+	background-color: #282828
+	&__container
+		padding: 40px
+	ul
+		padding: 0
+		list-style: none
+
+	&__title
+		color: #ffffff
+	&__list
+		margin-bottom: 30px
+		&:last-child
+			margin-bottom: 0
+		a 
+			color: #929090
+			line-height: 2
+
+.full-page
+	text-align: center
+	font-style: italic
+	padding: 15px
+	p 
+		margin: 10px 0 0 0
+		color: #fff
+
+.ae-logo
+	text-align: center	
+	display: block
+	padding: 10px
+	background-color: #282828
+	span
+		text-decoration: underline
+	&:hover
+		text-decoration: none
+
+
+.page-content
+	padding: 0 10px
+	position: relative
+	h2
+		color: #332b81
+		text-transform: none
+		text-align: left
+	.button
+		height: 50px
+		background-color: #0087dc
+		border: none
+		margin: auto
+		display: inline-block
+		color: #fff
+		font-size: 20px
+		text-transform: uppercase
+		cursor: pointer
+		text-align: center
+		padding: 10px 20px
+
+.feedback
+	&__title
+		display: flex
+		justify-content: space-between
+		position: relative
+		padding: 10px 0
+		margin-top: 10px
+		&:after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 2px
+			bottom: 0
+			background-color: #0087dc
+		&:before
+			content: ''
+			position: absolute
+			left: 0px
+			bottom: 0px
+			border: 8px solid transparent
+			border-bottom: 8px solid #0087dc
+	&__name
+		color: #332b81
+		font-size: 16px
+	&__date
+		font-style: italic
+		font-size: 14px
+		color: #6d6d6d
+	&__content
+		position: relative
+		background-color: #e9e8ed
+	&__comment
+		padding: 10px 10px 5px 40px
+		&:before
+			content: '!'
+			width: 23px
+			height: 23px
+			background-color: #f24841
+			position: absolute
+			left: 7px
+			border-radius: 50%
+			text-align: center
+			color: #fff
+			font-size: 20px
+			line-height: 22px
+	&__answer
+		margin-top: 10px
+		background-color: #dbd9e1
+		padding: 10px 10px 5px 40px
+		&:before
+			content: '\f0d7'
+			width: 23px
+			height: 23px
+			position: absolute
+			left: 7px
+			border: solid 1px #0087dc
+			border-radius: 50%
+			text-align: center
+			color: #0087dc
+			font-size: 15px
+			line-height: 22px
+			font-family: 'font awesome 5 pro'
+			font-weight: bold
+
+.feedback-form
+	position: absolute
+	z-index: 200
+	background-color: #fff
+	top: 0
+	display: none
+	top: 0
+	right: 0
+	bottom: 0
+	.button
+		margin: auto 
+		display: block
+	form
+		padding: 10px
+	&__title
+		padding: 0 10px
+		display: flex
+		justify-content: space-between
+		background-color: #e9e8ed
+		align-items: center
+	&__modal-button
+		width: 30px
+		height: 30px
+		background-color: #0087dc
+		color: white
+		font-size: 20px
+		text-align: center
+		line-height: 30px
+		cursor: pointer
+	textarea
+		width: 100%
+		height: 175px
+		border-color: #dcd9e1
+		margin-bottom: 10px
+		padding: 10px
+	input
+		width: 100%
+		background-color: #e9e8ed
+		border: none
+		padding-left: 10px
+		&:focus
+			border: 2px solid #0087dc
+	&__input-name
+		font-style: italic
+	&__input-item
+		margin-bottom: 10px
+
+.gase-catalog__item
+	li 
+		margin-bottom: 15px
+		position: relative
+		list-style-type: none
+		a 
+			color: #000
+		&:before
+			content: '\2014'
+			position: absolute
+			left: -20px
+			color: $blue
+			font-weight: bold
+
+.gase-catalog__title
+	height: 40px
+	background-color: #0087dc
+	border: none
+	margin: auto
+	display: inline-block
+	color: #fff
+	font-size: 14px
+	cursor: pointer
+	text-align: center
+	padding: 0 20px
+	width: 100%
+	line-height: 40px
+	margin-bottom: 20px
+
+.gas__tile 
+  position: relative
+  margin-bottom: 20px
+  padding-bottom: 20px
+  border-bottom: 1px solid #e8e7ec
+
+.gas__tile-container
+	display: flex
+
+.gas__tile-img 
+  height: 100px
+  flex: 0 0 100px
+
+.gas__tile-action 
+	display: flex
+	justify-content: space-between
+	margin-top: 20px
+.gas__tile-counter 
+  position: relative
+  border: 1px solid #e8e7ec
+  font-size: 0
+
+.gas__tile-counter-down 
+  position: absolute
+  width: 14px
+  height: 14px
+  background: #e8e7ec
+  top: 50%
+  left: 4px
+  margin-top: -7px
+  cursor: pointer
+  -webkit-transition: background-color 150ms ease-out
+  transition: background-color 150ms ease-out
+
+.gas__tile-counter-down::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 5px
+  height: 1px
+  margin-top: 0px
+  margin-left: -2px
+  background-image: url("../img/sprite.png")
+  background-position: -258px -213px
+  background-repeat: no-repeat
+
+.gas__tile-counter-down:hover 
+  background: #484848
+
+.gas__tile-counter-down:hover::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 5px
+  height: 1px
+  margin-top: 0px
+  margin-left: -2px
+  background-position: -243px -213px
+  background-repeat: no-repeat
+
+.gas__tile-counter-value 
+  box-sizing: border-box
+  display: inline-block
+  vertical-align: middle
+  width: 100px
+  height: 40px
+  border: 0
+  padding: 0 22px
+  text-align: center
+  font-size: 16px
+  line-height: 1em
+  color: #282828
+  font-weight: 100
+
+.gas__tile-counter-up 
+  position: absolute
+  width: 14px
+  height: 14px
+  background: #e8e7ec
+  top: 50%
+  right: 72px
+  margin-top: -7px
+  cursor: pointer
+  -webkit-transition: background 150ms ease-out
+  transition: background 150ms ease-out
+
+.gas__tile-counter-up::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 7px
+  height: 7px
+  margin-top: -3px
+  margin-left: -3px
+  background-image: url("../img/sprite.png")
+  background-position: -87px -254px
+  background-repeat: no-repeat
+
+.gas__tile-counter-up:hover 
+  background: #484848
+
+.gas__tile-counter-up:hover::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 7px
+  height: 7px
+  margin-top: -3px
+  margin-left: -3px
+  background-position: -104px -254px
+  background-repeat: no-repeat
+
+.gas__tile-counter-measure 
+  box-sizing: border-box
+  display: inline-block
+  vertical-align: middle
+  width: 40px
+  height: 40px
+  padding: 12px 0
+  background: #e8e7ec
+  font-size: 14px
+  line-height: 1em
+  color: #282828
+  font-weight: 100
+  text-align: center
+
+.gas__tile-counter-measure sub,
+.gas__tile-counter-measure sup 
+  font-size: 10px
+  line-height: 1em
+
+.gas__tile-cart 
+  position: relative
+  right: 0
+  box-sizing: border-box
+  width: 150px
+  cursor: pointer
+  padding: 12px 20px
+  padding-right: 50px
+  background: #0186d8
+  font-size: 16px
+  line-height: 1em
+  color: #fff
+  font-weight: 300
+  -webkit-transition: background 150ms ease-out
+  transition: background 150ms ease-out
+
+.gas__tile-cart .icon 
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  width: 40px
+  background: #007dc6
+  -webkit-transition: background 150ms ease-out
+  transition: background 150ms ease-out
+
+.gas__tile-cart .icon::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 23px
+  height: 18px
+  margin-top: -9px
+  margin-left: -11px
+  background-image: url("../img/sprite.png")
+  background-position: -278px -183px
+  background-repeat: no-repeat
+
+.gas__tile-cart:hover 
+  background: #056fc4
+
+.gas__tile-cart:hover .icon 
+  background: #0464b0
+
+.gas__tile-cart:hover .icon::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 23px
+  height: 22px
+  margin-top: -11px
+  margin-left: -11px
+  background-position: -283px -67px
+  background-repeat: no-repeat
+  margin-top: -13px
+
+.gas__tile-info 
+	display: inline-block
+	margin-left: 10px
+.gas__tile-name 
+  font-size: 16px
+  line-height: 1.2em
+  color: #484848
+  text-decoration: none
+  -webkit-transition: color 150ms ease-out
+  transition: color 150ms ease-out
+
+.gas__tile-name:hover 
+  color: #0185d7
+
+.gas__tile-name_text 
+  font-size: 16px
+  line-height: 1.2em
+  color: #332b81
+
+.gas__tile-category 
+  margin-top: 8px
+  font-size: 14px
+  line-height: 1em
+  color: #737373
+  font-weight: 300
+  font-style: italic
+
+.gas__tile-btn 
+  position: absolute
+  left: 120px
+  bottom: 20px
+  padding: 12px 37px
+  background: #d0d0d0
+  font-size: 16px
+  line-height: 1em
+  color: #282828
+  font-weight: 100
+  text-decoration: none
+  -webkit-transition: all 150ms ease-out
+  transition: all 150ms ease-out
+
+.gas__tile-btn:hover 
+  background: #484848
+  color: #fff
+
+.gas__text 
+  margin-bottom: 20px
+  border-bottom: 1px solid #e8e7ec
+
+.gas__text p 
+  font-size: 16px
+  line-height: 1.5em
+  color: #282828
+  font-weight: 100
+
+.gas__table 
+  font-size: 0
+  overflow-x: scroll
+
+.gas__table-title 
+  margin-bottom: 10px
+  font-size: 16px
+  line-height: 1em
+  color: #29207b
+
+.gas__table-subtitle 
+  background: #e8e7ec
+
+.gas__table-cellname 
+  margin-bottom: 3px
+  color: #737373
+
+.gas__table-item 
+  box-sizing: border-box
+  display: table
+  width: 100%
+  border-collapse: collapse
+
+.gas__table-item th 
+  padding: 4px 9px
+  background: #e8e7ec
+  border: 2px solid #d0d0d0
+  font-size: 16px
+  line-height: 1.2em
+  color: #737373
+  font-weight: 300
+  text-align: left
+
+.gas__table-item td 
+  padding: 4px 9px
+  border: 2px solid #d0d0d0
+  background: #fff
+  font-size: 14px
+  line-height: 1.4em
+  color: #282828
+  font-weight: 300
+
+
+.gas__table-item td:first-child 
+  width: 250px
+
+.product__card 
+  position: relative
+  margin-bottom: 20px
+  padding-bottom: 20px
+  border-bottom: 1px solid #e8e7ec
+
+.product__container
+	display: flex
+	justify-content: space-between
+
+.product__container-img
+	display: flex
+	margin-bottom: 20px
+.fitment-item
+	.product__card-img
+		width: 250px
+		height: 250px
+		margin: auto
+	.product__card-info
+		margin: 0
+		text-align: center
+		margin-top: 20px
+.product__card-img 
+  box-sizing: border-box
+  height: 100px
+  border: 1px solid #d0d0d0
+  background: #fff
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15)
+  text-align: center
+  flex: 0 0 100px
+
+
+.product__card-img img 
+  display: inline-block
+  vertical-align: middle
+  width: 100%
+
+.product__card-action 
+
+.product__card-price 
+  box-sizing: border-box
+  width: 150px
+  padding: 7px 0
+  background: #e8e7ec
+  font-size: 16px
+  line-height: 1em
+  color: #282828
+  font-weight: 500
+  text-align: center
+
+.product__card-price span 
+  font-size: 16px
+  line-height: 1em
+  font-weight: 400
+
+.product__card-final-price-title 
+  display: block
+  margin: 15px 0 3px
+  font-size: 14px
+  line-height: 1em
+  color: #282828
+  font-weight: 300
+  font-style: italic
+
+.product__card-final-price 
+	text-align: center
+	box-sizing: border-box
+	width: 150px
+	border: 2px solid #056fc4
+	background: #e8e7ec
+	font-size: 16px
+	line-height: 1em
+	color: #282828
+	font-weight: 500
+	display: flex
+	align-items: center
+
+.product__card-final-price span 
+  font-size: 16px
+  line-height: 1em
+  font-weight: 400
+
+.product__card-counter 
+  position: relative
+  border: 1px solid #e8e7ec
+  font-size: 0
+
+.product__card-counter-down 
+  position: absolute
+  width: 14px
+  height: 14px
+  background: #e8e7ec
+  top: 50%
+  left: 4px
+  margin-top: -7px
+  cursor: pointer
+  -webkit-transition: background-color 150ms ease-out
+  transition: background-color 150ms ease-out
+
+.product__card-counter-down::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 5px
+  height: 1px
+  margin-top: 0px
+  margin-left: -2px
+  background-image: url("../img/sprite.png")
+  background-position: -258px -213px
+  background-repeat: no-repeat
+
+.product__card-counter-down:hover 
+  background: #484848
+
+.product__card-counter-down:hover::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 5px
+  height: 1px
+  margin-top: 0px
+  margin-left: -2px
+  background-position: -243px -213px
+  background-repeat: no-repeat
+
+.product__card-counter-value 
+  box-sizing: border-box
+  display: inline-block
+  vertical-align: middle
+  width: 108px
+  height: 40px
+  border: 0
+  padding: 0 22px
+  text-align: center
+  font-size: 16px
+  line-height: 1em
+  color: #282828
+  font-weight: 100
+
+.product__card-counter-up 
+  position: absolute
+  width: 14px
+  height: 14px
+  background: #e8e7ec
+  top: 50%
+  right: 44px
+  margin-top: -7px
+  cursor: pointer
+  -webkit-transition: background 150ms ease-out
+  transition: background 150ms ease-out
+
+.product__card-counter-up::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 7px
+  height: 7px
+  margin-top: -3px
+  margin-left: -3px
+  background-image: url("../img/sprite.png")
+  background-position: -87px -254px
+  background-repeat: no-repeat
+
+.product__card-counter-up:hover 
+  background: #484848
+
+.product__card-counter-up:hover::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 7px
+  height: 7px
+  margin-top: -3px
+  margin-left: -3px
+  background-position: -104px -254px
+  background-repeat: no-repeat
+
+.product__card-counter-measure 
+  box-sizing: border-box
+  display: inline-block
+  vertical-align: middle
+  width: 40px
+  height: 40px
+  padding: 12px 0
+  background: #e8e7ec
+  font-size: 14px
+  line-height: 1em
+  color: #282828
+  font-weight: 100
+  text-align: center
+
+.product__card-counter-measure sub,
+.product__card-counter-measure sup 
+  font-size: 10px
+  line-height: 1em
+
+.product__card-cart 
+  position: relative
+  right: 0
+  box-sizing: border-box
+  width: 150px
+  cursor: pointer
+  padding: 12px 20px
+  padding-right: 50px
+  background: #0186d8
+  font-size: 16px
+  line-height: 1em
+  color: #fff
+  font-weight: 300
+  -webkit-transition: background 150ms ease-out
+  transition: background 150ms ease-out
+
+.product__card-cart .icon 
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  width: 40px
+  background: #007dc6
+  -webkit-transition: background 150ms ease-out
+  transition: background 150ms ease-out
+
+.product__card-cart .icon::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 23px
+  height: 18px
+  margin-top: -9px
+  margin-left: -11px
+  background-image: url("../img/sprite.png")
+  background-position: -278px -183px
+  background-repeat: no-repeat
+
+.product__card-cart:hover 
+  background: #056fc4
+
+.product__card-cart:hover .icon 
+  background: #0464b0
+
+.product__card-cart:hover .icon::before 
+  content: ''
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 23px
+  height: 22px
+  margin-top: -11px
+  margin-left: -11px
+  background-position: -283px -67px
+  background-repeat: no-repeat
+  margin-top: -13px
+
+.product__card-info 
+	margin-left: 20px
+
+.product__card-name 
+  font-size: 16px
+  line-height: 1.2em
+  color: #332b81
+  text-decoration: none
+
+.product__card-category 
+  margin-top: 10px
+  font-size: 14px
+  line-height: 1em
+  color: #737373
+  font-weight: 300
+  font-style: italic
+
+
+.product__card-btn 
+  padding: 12px 37px
+  background: #d0d0d0
+  font-size: 16px
+  line-height: 1em
+  color: #282828
+  font-weight: 100
+  text-decoration: none
+  -webkit-transition: all 150ms ease-out
+  transition: all 150ms ease-out
+  display: block
+  text-align: center
+  margin-top: 10px
+
+.product__card-btn:hover 
+  background: #484848
+  color: #fff
+
+.contacts
+	.button
+		margin: auto
+		text-align: center
+		display: block
+		margin-bottom: 20px
+
+.contacts__title
+	font-style: italic
+	padding-left: 10px
+
+.contacts-item
+	background-color: #e9e8ed
+	padding: 10px
+	margin-bottom: 10px
+	&__block
+		border-bottom: 1px solid #c6c6c6
+		margin-bottom: 10px
+		padding-bottom: 10px
+	&__block.mail
+		border-bottom: none
+		padding: 0
+		margin: 0
+		a 
+			display: block
+
+.cart
+	.product__card-final-price
+		width: 100px
+		justify-content: space-around
+	.gas__tile-counter
+		width: 100px
+	.gas__tile-counter-value
+		width: 58px
+	.gas__tile-counter-up
+		right: 44px
+	.remove-cart 
+		width: 70px
+		font-size: 12px
+		text-align: center
+		background-color: #d1d1d1
+		line-height: 1.3
+		display: flex
+		align-items: center
+	.cart-item__price
+		font-size: 16px
+		line-height: 1em
+		color: #282828
+		font-weight: 500
+		margin-top: 10px
+	.price-calculate
+		box-shadow: 0 0 5px 5px rgba(0,0,0, .15)
+		padding: 10px
+		text-align: center
+	.pice-calculate__button
+		cursor: pointer
+
+	.item-order
+@import "media" // Always at the end
